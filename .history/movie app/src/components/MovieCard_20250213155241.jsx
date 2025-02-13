@@ -1,4 +1,13 @@
-function MovieCard({ movie }) {
+import PropTypes from 'prop-types';
+
+export function MovieCard({ movie }) {
+  MovieCard.propTypes = {
+    movie: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    }).isRequired,
+  };
+
   function onFavoriteClick() {
     alert('clicked');
   }
@@ -6,7 +15,7 @@ function MovieCard({ movie }) {
   return (
     <div className='movie-card'>
       <div className='movie-poster'>
-        <img src={movie.url} alt={movie.title} />
+        <img src={movie.url} alt={'movie.title'} />
         <div className='movie-overlay'></div>
         <button className='favorite-btn' onClick={onFavoriteClick}>
           ♥
@@ -14,10 +23,7 @@ function MovieCard({ movie }) {
       </div>
       <div className='movie-info'>
         <h3>{movie.title}</h3>
-        <p>{movie.release_date}</p>
       </div>
     </div>
   );
 }
-
-export default MovieCard;
