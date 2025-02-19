@@ -10,11 +10,7 @@ function Home() {
     { id: 3, title: 'The Matrix', release_date: '1998' },
   ];
 
-  const handleSearch = (e) => {
-    e.preventDefault(e);
-    alert(searchQuery);
-    setSearchQuery('');
-  };
+  const handleSearch = () => {};
 
   return (
     <div className='home'>
@@ -23,8 +19,6 @@ function Home() {
           type='text'
           placeholder='search for movies...'
           className='search-input'
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
         />
         <button type='submit' className='search-button'>
           Search

@@ -13,7 +13,6 @@ function Home() {
   const handleSearch = (e) => {
     e.preventDefault(e);
     alert(searchQuery);
-    setSearchQuery('');
   };
 
   return (
