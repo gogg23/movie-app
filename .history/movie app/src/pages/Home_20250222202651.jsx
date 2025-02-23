@@ -8,15 +8,8 @@ function Home() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const loadPopularMovies = async () => {
-      try {
-        const popularMovies = await getPopularMovies();
-        setMovies(popularMovies);
-      } catch (err) {
-      } finally {
-      }
-    };
-  }, []);
+    loadPopularMovies().then((data) => setMovies(data));
+  }
 
   const handleSearch = (e) => {
     e.preventDefault(e);

@@ -1,22 +1,12 @@
 import MovieCard from '../components/MovieCard';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { searchMovies, getPopularMovies } from '../services/api';
 import '../css/Home.css';
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [movies, setMovies] = useState([]);
 
-  useEffect(() => {
-    const loadPopularMovies = async () => {
-      try {
-        const popularMovies = await getPopularMovies();
-        setMovies(popularMovies);
-      } catch (err) {
-      } finally {
-      }
-    };
-  }, []);
+  const movies = getPopularMovies();
 
   const handleSearch = (e) => {
     e.preventDefault(e);
