@@ -5,7 +5,7 @@ import '../css/Home.css';
 
 function NavBar() {
   return (
-    <nav className='navbar'>
+    <nav className='nav-bar'>
       <div className='navbar-brand'>
         <Link to='/'>Movie App</Link>
       </div>

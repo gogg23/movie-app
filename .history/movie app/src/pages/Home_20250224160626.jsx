@@ -6,7 +6,7 @@ import '../css/Home.css';
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
   const [movies, setMovies] = useState([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('null');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -26,10 +26,7 @@ function Home() {
 
   const handleSearch = (e) => {
     e.preventDefault(e);
-    if (!searchQuery.trim) return;
-
-    setLoading(true);
-
+    alert(searchQuery);
     setSearchQuery('');
   };
 
@@ -51,6 +48,7 @@ function Home() {
       {loading ? (
         <div className='loading'>Loading...</div>
       ) : (
+        // ✅ Added `:` to handle the false case properly
         <div className='movies-grid'>
           {movies.map((movie) => (
             <MovieCard movie={movie} key={movie.id} />

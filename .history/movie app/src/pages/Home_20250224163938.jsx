@@ -28,8 +28,6 @@ function Home() {
     e.preventDefault(e);
     if (!searchQuery.trim) return;
 
-    setLoading(true);
-
     setSearchQuery('');
   };
 

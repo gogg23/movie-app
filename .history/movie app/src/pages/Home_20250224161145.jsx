@@ -26,10 +26,7 @@ function Home() {
 
   const handleSearch = (e) => {
     e.preventDefault(e);
-    if (!searchQuery.trim) return;
-
-    setLoading(true);
-
+    alert(searchQuery);
     setSearchQuery('');
   };
 
