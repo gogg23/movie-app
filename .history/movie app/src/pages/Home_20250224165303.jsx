@@ -24,16 +24,13 @@ function Home() {
     loadPopularMovies();
   }, []);
 
-  const handleSearch = async (e) => {
+  const handleSearch = (e) => {
     e.preventDefault(e);
     if (!searchQuery.trim) return;
     if (loading) return;
 
     setLoading(true);
     try {
-      const searchResults = await searchMovies(searchQuery);
-      setMovies(searchResults);
-      setError(null);
     } catch (err) {
       console.log(err);
       setError('failed to search movies...');
