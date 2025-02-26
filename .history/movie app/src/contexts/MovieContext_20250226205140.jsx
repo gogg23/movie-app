@@ -35,7 +35,6 @@ export const MovieProvider = ({ children }) => {
     removeFromFavorites,
     isFavorite,
   };
-
-  return <MovieContext.Provider value={value}>
-  {children}</MovieContext.Provider>;
+  
+  return <MovieContext.Provider>{children}</MovieContext.Provider>;
 };
