@@ -16,14 +16,5 @@ export const MovieProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
-
-  const addToFavorites = (movie) => {
-    set Favorites(prev=>[...prev, movie]);
-  }
-
-  const removeFromFavorites = (movieId) {
-    setFavorites(prev=>prev.filter((movie) => movie.id !== movieId));
-  }
-
   return <MovieContext.Provider>{children}</MovieContext.Provider>;
 };
