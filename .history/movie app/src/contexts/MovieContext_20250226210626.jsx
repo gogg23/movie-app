@@ -17,10 +17,11 @@ export const MovieProvider = ({ children }) => {
   }, [favorites]);
 
   const addToFavorites = (movie) => {
-    setFavorites((prev) => [...prev, movie]);
+    setFavorites((prev) => [...prev, movie]); // Fixed typo (removed space)
   };
 
   const removeFromFavorites = (movieId) => {
+    // Fixed function syntax
     setFavorites((prev) => prev.filter((movie) => movie.id !== movieId));
   };
 
