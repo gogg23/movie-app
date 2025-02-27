@@ -5,18 +5,15 @@ import MovieCard from '../components/MovieCard';
 function Favorite() {
   const { favorites } = useMovieContext();
 
-  if (favorites.length > 0) {
-    // Ensure it checks if array has movies
-    return (
-      <div className='favorites'>
-        <h2>Your Favorites</h2>
-        <div className='movies-grid'>
-          {favorites.map((movie) => (
-            <MovieCard movie={movie} key={movie.id} />
-          ))}
-        </div>
-      </div>
-    );
+  if (favorites) {
+    return
+    <div className='favorites'>
+    <h2>Your Favorites</h2>
+    <div className='movies-grid'>
+      {favorites.map((movie) => (
+        <MovieCard movie={movie} key={movie.id}/>
+    </div>
+    </div
   }
 
   return (
